@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-pattern">
+        <div class="pattern-shape"></div>
+        <div class="pattern-shape"></div>
+        <div class="pattern-shape"></div>
+        <div class="pattern-shape"></div>
+        <div class="pattern-shape"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Age Calculator</h1>
+            <p>Discover your age in years, months, and days</p>
+        </header>
+
+        <main>
+            <div class="calculator">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="birthdate">Enter your birthdate:</label>
+                        <input type="date" id="birthdate" required>
+                    </div>
+                    <button id="calculateBtn" class="btn primary">Calculate Age</button>
+                </div>
+
+                <div class="result-section hidden">
+                    <div class="age-display">
+                        <div class="age-number">
+                            <span id="years">0</span>
+                            <span>Years</span>
+                        </div>
+                        <div class="age-number">
+                            <span id="months">0</span>
+                            <span>Months</span>
+                        </div>
+                        <div class="age-number">
+                            <span id="days">0</span>
+                            <span>Days</span>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                        <div class="timeline-labels">
+                            <span>Birth</span>
+                            <span>Now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="share-section hidden">
+                    <button id="shareBtn" class="btn secondary">
+                        <i class="fas fa-share-alt"></i> Share Your Age
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Age Calculator. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

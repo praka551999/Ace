@@ -1,0 +1,272 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #34495e;
+    --accent-color: #e74c3c;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --pattern-color: rgba(74, 144, 226, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background pattern */
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.pattern-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: float 10s ease-in-out infinite;
+}
+
+.pattern-shape:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    background: var(--pattern-color);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.pattern-shape:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    background: var(--pattern-color);
+    top: 30%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.pattern-shape:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    background: var(--pattern-color);
+    bottom: 20%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.pattern-shape:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    background: var(--pattern-color);
+    top: 50%;
+    right: 10%;
+    animation-delay: 6s;
+}
+
+.pattern-shape:nth-child(5) {
+    width: 80px;
+    height: 80px;
+    background: var(--pattern-color);
+    bottom: 40%;
+    left: 40%;
+    animation-delay: 8s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.calculator {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.input-section {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn.secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.result-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.age-display {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.age-number {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.age-number span:first-child {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.age-number span:last-child {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.timeline-labels {
+    display: flex;
+    justify-content: space-between;
+    color: var(--secondary-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.share-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .age-display {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
